@@ -1,0 +1,77 @@
+@model IEnumerable<FileUploader.Models.AttachmentFileViewModel.AttachmentFileCRUDViewModel>
+
+<div class="panel panel-hash">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-5">
+                <button class="btn btn-sm btn-danger" onclick="AddEdit(0)">Add New</button>
+            </div>
+            <div class="col-md-7">
+                <h5><b>Uploaded File List</b></h5>
+            </div>
+        </div>
+    </div>
+    <div id="divAlertArea">
+        <partial name="~/Views/UIComponents/_bootstrapAlert.cshtml" />
+    </div>
+    <div class="panel-body scroll panel-height">
+        <table id="tblFU" class="CustomColorTable" border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Content Type</th>
+                    <th>File Name</th>
+                    <th>Length[Bytes]</th>
+                    <th>Created Date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContentType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FileName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Length)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            <a href='#' class='btn btn-success btn-sm' onclick="DownloadFile('@item.Id');">Download</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-danger" onclick="Delete(@item.Id)">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .panel-heading {
+        padding: 0px 0px 0px 5px;
+    }
+
+    .panel-body {
+        padding: 5px;
+    }
+
+    .h4 {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+</style>
+
+<script src="~/js/AttachmentFile/AttachmentFile_CRUD.js"></script>

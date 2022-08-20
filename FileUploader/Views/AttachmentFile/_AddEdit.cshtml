@@ -1,0 +1,25 @@
+@model FileUploader.Models.AttachmentFileViewModel.AddNewFileViewModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="frmAttachmentFile" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <span class="control-fileupload">
+                        <label for="file">Choose a file :</label>
+                        <input type="file" asp-for="AttachmentFile" id="AttachmentFile" name="AttachmentFile[]" multiple />                     
+                    </span>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="button" value="Upload File" id="btnUploadFile" class="btn btn-success" onclick="AddNewAttachmentFile()">
+                    <input type="button" class="btn btn-danger" value="Clear Selection" onclick="ClearSelection()" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
