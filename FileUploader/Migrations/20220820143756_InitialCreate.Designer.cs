@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FileUploader.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220820093911_InitialCreate")]
+    [Migration("20220820143756_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

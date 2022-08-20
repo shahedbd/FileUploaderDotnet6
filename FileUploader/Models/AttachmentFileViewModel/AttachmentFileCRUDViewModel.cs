@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FileUploader.Models.AttachmentFileViewModel
 {
+    // View mapping class
     public class AttachmentFileCRUDViewModel : EntityBase
     {
         [Display(Name = "SL")]

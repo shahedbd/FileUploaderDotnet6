@@ -25,6 +25,7 @@
                     <th>Created Date</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +49,9 @@
                         </td>
                         <td>
                             <a href='#' class='btn btn-success btn-sm' onclick="DownloadFile('@item.Id');">Download</a>
+                        </td>
+                        <td>
+                            <a href='#' class="btn btn-sm btn-info" onclick="Details(@item.Id)">View</a>
                         </td>
                         <td>
                             <a class="btn btn-sm btn-danger" onclick="Delete(@item.Id)">Delete</a>
